@@ -1,0 +1,10 @@
+<div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header"><%= @item.title %></div>
+  <div class="card-body">
+   <h5 class="card-title"><%= @item.price %><h5/>
+    <p class="card-text"><%= @item.image_url %></p>
+    <p class="card-text"><%= @item.description %></p>
+  </div>
+</div>
+
+<p> <a href="<%= items_path %>" class="btn btn-primary">Retour</a>
