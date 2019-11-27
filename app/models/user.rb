@@ -10,6 +10,7 @@ def welcome_send
 
 def set_cart
   @cart = Cart.create(user_id: self.id)
+  @j = JoinCartItem.create(cart: self.cart)
 end
 
 

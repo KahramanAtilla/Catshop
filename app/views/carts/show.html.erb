@@ -1,0 +1,12 @@
+
+<% @cart.items.each do |x| %>
+
+<%= x.title =%> <br>
+<%= x.description %> <br>
+<%= x.price %> <br>
+<%= x.image_url %> <br>
+
+<% end %>
+
+<p> <a href="<%= items_path %>" class="btn btn-primary">Retour</a> </p>
+
