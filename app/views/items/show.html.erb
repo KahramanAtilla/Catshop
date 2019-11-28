@@ -15,13 +15,14 @@
 </div>
 
 
+<%= form_with(url: cart_path, method: 'patch') do %>
+<%= button_tag(type: "submit", class: "btn btn-default") do %>
+<span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i>Add to cart</span>
+<% end %>
+<% end %></span>
 
 
-
-<%= form_with(url: cart_path, method: 'patch') do %><%= button_tag(type: "submit", class: "btn btn-default") do %><span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i> Ajouter au panier !</span><% end %><% end %></span>
-
-
-<span><a href="<%= items_path %>" class="btn btn-primary">Retour</a>
+<span><a href="<%= items_path %>" class="btn btn-primary">Back</a>
 
 
 </center>
