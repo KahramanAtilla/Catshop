@@ -25,3 +25,10 @@
 
 <p> <a href="<%= items_path %>" class="btn btn-primary">Back</a> </p>
 </center>
+
+
+<%= form_with(url: orders_path, method: 'post') do %>
+<%= button_tag(type: "submit", class: "btn btn-default") do %>
+<span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i>Add to order</span>
+<% end %>
+<% end %></span>
