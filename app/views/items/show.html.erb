@@ -1,12 +1,27 @@
-<div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header"><%= @item.title %></div>
-  <div class="card-body">
-   <h5 class="card-title"><%= @item.price %><h5/>
-    <p class="card-text"><%= @item.image_url %></p>
-    <p class="card-text"><%= @item.description %></p>
+<center>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="<%= @item.image_url %>" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @item.title %></h5>
+        <p class="card-text"><%= @item.description %></p>
+        <p class="card-text"><small class="text-muted"><%= @item.price %> $ </small></p>
+      </div>
+    </div>
   </div>
 </div>
 
-<span><a href="<%= items_path %>" class="btn btn-primary">Retour</a> 
+
+
+
+
 <%= form_with(url: cart_path, method: 'patch') do %><%= button_tag(type: "submit", class: "btn btn-default") do %><span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i> Ajouter au panier !</span><% end %><% end %></span>
 
+
+<span><a href="<%= items_path %>" class="btn btn-primary">Retour</a>
+
+
+</center>

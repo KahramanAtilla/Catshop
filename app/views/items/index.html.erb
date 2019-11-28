@@ -1,20 +1,22 @@
-<h1> salut </h1>
-
-
 <% Item.all.each do |x| %>
-<div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header"><%= x.title %></div>
-  <div class="card-body">
-    <p class="card-text"><%= x.image_url %></p>
+<center>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="<%= x.image_url %>" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= x.title %></h5>
+        <p class="card-text"><%= x.description %></p>
+        <p class="card-text"><small class="text-muted"><%= x.price %> $ </small></p>
+
+<a href="<%= item_path(x.id) %>" class="btn btn-primary">Show</a>
+      </div>
+    </div>
   </div>
 </div>
 
-
-
-
-<a href="<%= item_path(x.id) %>" class="btn btn-primary">Show</a>
-
-
-
-
 <% end %>
+
+</center>

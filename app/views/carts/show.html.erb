@@ -1,12 +1,27 @@
-
+<center>
+<h1> Mon panier </h1>
 <% @cart.items.each do |x| %>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="<%= x.image_url %>" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= x.title %></h5>
+        <p class="card-text"><%= x.description %></p>
+        <p class="card-text"><small class="text-muted"><%= x.price %> $ </small></p>
 
-<%= x.title =%> <br>
-<%= x.description %> <br>
-<%= x.price %> <br>
-<%= x.image_url %> <br>
+<a href="<%= item_path(x.id) %>" class="btn btn-primary">Show</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
 
-<p> <a href="<%= items_path %>" class="btn btn-primary">Retour</a> </p>
 
+
+
+<p> <a href="<%= items_path %>" class="btn btn-primary">Retour</a> </p>
+</center>
