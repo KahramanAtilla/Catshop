@@ -4,23 +4,21 @@ class CartsController < ApplicationController
    # @items = all_items
   end
 
-  def destroy
-    Cart.find_by(user_id: current_user.id).items << Item.find(params[:id])
+#    Cart.find_by(user_id: current_user.id).items << Item.find(params[:id])
+
+  def update
+    @carti = Cart.find_by(user_id: current_user.id)
+    @itemi = Item.find(params[:id])
+
+
+    if current_user
+      @carti.items << @itemi
+
+    else
+      redirect_to new_user_session_path
+    end
+
   end
 
 
-
-
-
-  #def all_items
-   # u = current_user
-   # cu = Cart.find_by(user_id: u.id)
-   # @items = []
-#
- #   JoinCartItem.where(cart_id: cu.id).each do |item|
-  #    @items << Item.find(item.item_id)
-  #  end
-#
- #   return @items
- # end
 end

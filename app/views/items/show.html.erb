@@ -7,7 +7,6 @@
   </div>
 </div>
 
-<p> <a href="<%= items_path %>" class="btn btn-primary">Retour</a> 
-
-<a href="<%= cart_path %>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
+<span><a href="<%= items_path %>" class="btn btn-primary">Retour</a> 
+<%= form_with(url: cart_path, method: 'patch') do %><%= button_tag(type: "submit", class: "btn btn-default") do %><span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i> Ajouter au panier !</span><% end %><% end %></span>
 
